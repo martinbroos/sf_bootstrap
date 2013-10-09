@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block head_style %}
+    {% stylesheets
+        'bundles/fhapp/sass/layout.scss' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body_script_bottom %}
+    {% javascripts
+        'bundles/fhstyle/components/jquery/jquery.min.js'
+        'bundles/fhapp/js/init.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+{% block title %}Site title{% endblock %}
+
+{% block header %}
+    <header>
+        {# <nav>{{ knp_menu_render('main') }}</nav> #}
+    </header>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <span class="credits">Website door <a href="http://www.martinbroos.nl" rel="external">Martin Broos</a>
+    </footer>
+{% endblock %}

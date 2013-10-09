@@ -1,0 +1,4 @@
+mb_site:
+    resource: "@MBSiteBundle/Resources/config/routing.yml"
+    prefix:   /
+

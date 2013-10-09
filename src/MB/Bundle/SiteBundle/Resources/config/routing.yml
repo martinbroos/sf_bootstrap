@@ -1,0 +1,3 @@
+mb_site_homepage:
+    pattern:  /
+    defaults: { _controller: MBSiteBundle:Main:index }
