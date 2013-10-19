@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------------*\
+        theme.scss
+        Theme stylesheet, extends Blocss CSS Framework
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+        CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    README
+    INCLUDES............Include various sass files
+    BASE................High-level elements like 'html', 'body', etc.
+    LAYOUT..............Structural styling
+    MODULES.............Reusable, modular parts of the page
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $README
+\*----------------------------------------------------------------------------*/
+
+    /*
+    Here we set up some variables, include Blocss CSS Framework then add our
+    theme-specific components afterwards.
+
+    In your terminal, navigate to the root of your project & run the following
+    command to watch & compile the file:
+    Sass:       sass --watch theme.scss:theme.css
+    Compass:    compass watch
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $INCLUDES
+    Include various sass files
+\*----------------------------------------------------------------------------*/
+
+    /**
+     * If you use compass enable this
+     */
+    @import "compass/css3";
+    @import "vars";
+    @import "../components/blocss/blocss";
+
+
+    /**
+     * Theme includes
+     */
+    @import "theme/base";
+    @import "theme/layout";
+    @import "theme/modules";

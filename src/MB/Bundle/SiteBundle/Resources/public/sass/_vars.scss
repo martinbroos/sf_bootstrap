@@ -1,0 +1,90 @@
+/*----------------------------------------------------------------------------*\
+    $VARS
+    Any variables you find set in blocss’ `_defaults.scss` that you do not wish
+    to keep, simply redefine here. This means that if blocss, for example,
+    sets your `$bfs` at 16px and you wish it to be 14px, simply
+    redeclare that variable in this file. Blocss ignores its own variables
+    in favour of using your own, so you can completely modify how blocss
+    works without ever having to alter the framework itself.
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULES.................Enable/disable modules
+    OVERRIDES...............Variables that should override defaults
+    CUSTOM..................Your own variables
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULES
+    All of blocss’ objects and abstractions are initially turned off by
+    default. This means that you start any project with as little as possible,
+    and introducing objects and abstractions is as simple as switching the
+    following variables to `true`.
+\*----------------------------------------------------------------------------*/
+
+    /**
+     * Base
+     */
+    $use-base-quotes:                  false;
+    $use-base-code:                    false;
+    $use-base-tables:                  false;
+    $use-base-forms:                   false;
+
+
+    /**
+     * Modules
+     */
+    $use-modules-grid:                 false;
+    $use-modules-arrange:              false;
+    $use-modules-nav:                  false;
+        $use-modules-breadcrumb:       false;
+        $use-modules-pagination:       false;
+    $use-modules-media:                false;
+    $use-modules-flexembed:            false;
+    $use-modules-island:               false;
+    $use-modules-link-complex:         false;
+    $use-modules-split:                false;
+    $use-modules-sprite:               false;
+    $use-modules-buttons:              false;
+    $use-modules-rules:                false;
+    $use-modules-greybox:              false;
+    $use-modules-notice:               false;
+
+
+    /**
+     * Generic
+     */
+    $use-generic-widths:               false;
+    $use-generic-push:                 false;
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $OVERRIDES
+    Place any variables that should override blocss’ defaults here.
+\*----------------------------------------------------------------------------*/
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $CUSTOM
+    Place any of your own variables that sit on top of blocss here.
+\*----------------------------------------------------------------------------*/
+
+    /* Toplevel
+    \*------------------------------------------------------------------------*/
+
+     $site-retain:                       980px!default;
