@@ -2,16 +2,29 @@
 
 {% block head_style %}
     {% stylesheets
-        'bundles/fhapp/sass/layout.scss' %}
+        'bundles/mbsite/sass/theme.scss' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 {% endblock %}
 
+{% block head_script %}
+    {% javascripts
+        'bundles/mbsite/components/modernizr/modernizr.js' %}
+        <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+    {% javascripts
+        'bundles/mbsite/components/selectivizr/selectivizr.js' %}
+        <!--[if (gte IE 6)&(lte IE 8)]>          
+        <script src="{{ asset_url }}"></script>
+        <![endif]-->
+    {% endjavascripts %}
+{% endblock %}
+
 {% block body_script_bottom %}
     {% javascripts
-        'bundles/fhstyle/components/jquery/jquery.min.js'
-        'bundles/fhapp/js/init.js' %}
-        <script type="text/javascript" src="{{ asset_url }}"></script>
+        'bundles/mbsite/components/jquery/jquery.min.js'
+        'bundles/mbsite/js/init.js' %}
+        <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
 
@@ -19,7 +32,7 @@
 
 {% block header %}
     <header>
-        {# <nav>{{ knp_menu_render('main') }}</nav> #}
+        <nav>{{ knp_menu_render('MBSiteBundle:MenuBuilder:mainMenu') }}</nav>
     </header>
 {% endblock %}
 
