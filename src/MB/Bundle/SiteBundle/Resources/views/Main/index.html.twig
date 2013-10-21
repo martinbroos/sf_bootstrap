@@ -1,5 +1,28 @@
 {% extends 'MBSiteBundle::layout.html.twig' %}
 
 {% block content %}
-	<h1>Layout</h1>
+	<div class="site--retain">
+		<h1>Test Formulier</h1>
+		<form class="form" data-validate="parsley">
+			<div class="form__field-wrapper">
+				<div class="form__label-wrapper">
+					<label>Naam</label>
+				</div>
+				<div class="form__input-wrapper">
+					<input type="text" data-required="true" />
+				</div>
+			</div>
+			<div class="form__field-wrapper">
+				<div class="form__label-wrapper">
+					<label>Email</label>
+				</div>
+				<div class="form__input-wrapper">
+					<input type="email" data-trigger="change" data-required="true" data-type="email" />
+				</div>
+			</div>
+			<div class="form__button-wrapper">
+				<button type="submit" class="button">Verzend</button>
+			</div>			
+		</form>
+	</div>
 {% endblock %}

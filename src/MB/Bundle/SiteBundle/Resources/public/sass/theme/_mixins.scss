@@ -1,0 +1,71 @@
+/*----------------------------------------------------------------------------*\
+    $MIXINS
+\*----------------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------------*\
+    $CONTENTS
+\*----------------------------------------------------------------------------*/
+
+    /*
+    CONTENTS................You're reading it, LOL
+    MODULE..................Includes base module & submodules
+    STATE...................States the module can be in
+    THEME...................Theming of the module
+    */
+
+
+
+
+
+/*----------------------------------------------------------------------------*\
+    $MODULE
+\*----------------------------------------------------------------------------*/
+
+
+    /* MISC
+    \*------------------------------------------------------------------------*/
+
+        /**
+         * Reset list mixin
+         * Undoes standard list styling & resets padding
+         *
+         * Sample usage: @include reset-list;
+         */
+        @mixin reset-list {
+            padding: 0;
+            margin-left: 0;
+            list-style: none;
+            list-style-image: none;
+        }
+        
+        /**
+         * Form field styling mixin
+         * Style fields in one swoop
+         *
+         * Sample usage: @include form-fields(tel url);
+         */
+        @mixin form-fields($ignores: ()) {
+            $types: ();
+            @each $input-type in $input-types {
+                $input: unquote("");
+                @if $input-type == textarea {
+                    $input: unquote("#{$input-type} ");
+                } @else if $input-type == text-input {
+                    $input: unquote(".#{$input-type} ");
+                } @else {
+                    $input: unquote("input[type=#{$input-type}] ");
+                }
+
+                @each $ignore in $ignores {
+                    @if $ignore == $input-type {
+                        $input: unquote("");
+                    }
+                }
+
+                $types: join($types, $input, comma);
+            }
+
+            #{$types}{
+                @content;
+            }
+        }

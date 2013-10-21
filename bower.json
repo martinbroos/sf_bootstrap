@@ -6,6 +6,7 @@
         "blocss": "https://github.com/Blocss/blocss.git#4.0.0",
         "jquery-placeholder": "latest",
         "selectivizr": "latest",
-        "modernizr": "latest"
+        "modernizr": "latest",
+        "parsleyjs": "latest"
     }
 }
