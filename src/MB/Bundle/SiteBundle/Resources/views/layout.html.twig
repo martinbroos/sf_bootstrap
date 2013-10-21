@@ -1,5 +1,7 @@
 {% extends '::base.html.twig' %}
 
+{% block title %}Site title{% endblock %}
+
 {% block head_style %}
     {% stylesheets
         'bundles/mbsite/sass/theme.scss' %}
@@ -23,21 +25,27 @@
 {% block body_script_bottom %}
     {% javascripts
         'bundles/mbsite/components/jquery/jquery.min.js'
+        'bundles/mbsite/components/parsleyjs/parsley.js'
+        'bundles/mbsite/components/parsleyjs/i18n/messages.nl.js'
         'bundles/mbsite/js/init.js' %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}
 {% endblock %}
 
-{% block title %}Site title{% endblock %}
-
 {% block header %}
-    <header>
-        <nav>{{ knp_menu_render('MBSiteBundle:MenuBuilder:mainMenu') }}</nav>
-    </header>
+    <div class="site--retain">
+        <header>
+            <nav class="nav--primary">
+                {{ knp_menu_render('MBSiteBundle:MenuBuilder:mainMenu') }}
+            </nav>
+        </header>
+    </div>
 {% endblock %}
 
 {% block footer %}
     <footer>
-        <span class="credits">Website door <a href="http://www.martinbroos.nl" rel="external">Martin Broos</a>
+        <div class="site--retain">
+            <span class="credits">Website door <a href="http://www.martinbroos.nl" rel="external">Martin Broos</a></span>
+        </div>
     </footer>
 {% endblock %}

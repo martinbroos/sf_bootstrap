@@ -15,8 +15,12 @@ class MenuBuilder extends ContainerAware
     public function mainMenu(FactoryInterface $factory, array $options)
     {
         $menu = $factory->createItem('root');
+        $menu->setChildrenAttribute('class', 'nav');
 
         $menu->addChild('Home', array('route' => 'homepage'));
+        $menu->addChild('Pagina 1');
+        $menu->addChild('Pagina 2');
+        $menu->addChild('Pagina 3');
 /*      
         $menu->addChild('About Me', array(
             'route' => 'page_show',
