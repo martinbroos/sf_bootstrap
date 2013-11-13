@@ -66,3 +66,15 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+    
+deploy:
+  prod:
+    rsync-options: '-azC --force --delete --progress -h --checksum'
+    host: martin.domeinwinkel.nl
+    user: martin
+    dir: /home/martin/domains/nextgencomputers.nl
+    port: 222
+    post_deploy_operations: 
+        - app/console cache:clear
+        - app/console assets:install
+        - app/console assetic:dump      
