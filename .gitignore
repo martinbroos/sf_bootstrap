@@ -11,3 +11,4 @@
 /composer.phar
 src/MB/Bundle/SiteBundle/Resources/public/components
 web/uploads
+.DS_Store

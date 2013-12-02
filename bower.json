@@ -3,7 +3,7 @@
     "version": "1.0.0",	
     "dependencies": {
         "jquery": "~1.10.0",
-        "blocss": "https://github.com/Blocss/blocss.git#4.0.0",
+        "blocss-framework": "~4",
         "jquery-placeholder": "latest",
         "selectivizr": "latest",
         "modernizr": "latest",
