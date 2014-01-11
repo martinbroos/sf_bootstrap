@@ -1,4 +1,3 @@
 {
-	"directory": "src/MB/Bundle/SiteBundle/Resources/public/components",
-	"json": "bower.json"
+	"directory": "web/assets/vendor"
 }

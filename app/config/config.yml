@@ -26,21 +26,6 @@ twig:
     debug:            %kernel.debug%
     strict_variables: %kernel.debug%
 
-# Assetic Configuration
-assetic:
-    debug:          %kernel.debug%
-    use_controller: false
-    bundles:        [ MBSiteBundle ]
-    filters:
-        cssrewrite:
-            apply_to:           "\.(css|scss|sass)$"
-        compass:
-            apply_to:           "\.(scss|sass)$"
-#        uglifycss:
-#            apply_to:           "\.(css|scss|sass)$"
-#        uglifyjs:
-#            apply_to:           "\.js$"            
-
 # Doctrine Configuration
 doctrine:
     dbal:
