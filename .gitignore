@@ -9,6 +9,8 @@
 /vendor/
 /bin/
 /composer.phar
-src/MB/Bundle/SiteBundle/Resources/public/components
-web/uploads
+/web/assets/vendor
+/web/assets/dist
+/web/uploads
+/web/bundles
 .DS_Store

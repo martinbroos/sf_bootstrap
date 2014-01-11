@@ -3,39 +3,28 @@
 {% block title %}Site title{% endblock %}
 
 {% block head_style %}
-    {% stylesheets
-        'bundles/mbsite/sass/theme.scss' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('assets/dist/css/theme.css') }}" />
 {% endblock %}
 
 {% block head_script %}
-    {% javascripts
-        'bundles/mbsite/components/modernizr/modernizr.js' %}
-        <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-    {% javascripts
-        'bundles/mbsite/components/selectivizr/selectivizr.js' %}
-        <!--[if (gte IE 6)&(lte IE 8)]>          
-        <script src="{{ asset_url }}"></script>
-        <![endif]-->
-    {% endjavascripts %}
+    <script src="{{ asset('assets/vendor/modernizr/modernizr.js') }}"></script>
+    <!--[if (gte IE 6)&(lte IE 8)]>
+    <script src="{{ asset('assets/vendor/selectivizr/selectivizr.js') }}"></script>
+    <![endif]-->
 {% endblock %}
 
 {% block body_script_bottom %}
-    {% javascripts
-        'bundles/mbsite/components/jquery/jquery.min.js'
-        'bundles/mbsite/components/parsleyjs/parsley.js'
-        'bundles/mbsite/components/parsleyjs/i18n/messages.nl.js'
-        'bundles/mbsite/js/init.js' %}
-        <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
+    <script src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ asset('assets/vendor/parsleyjs/parsley.js') }}"></script>
+    <script src="{{ asset('assets/vendor/parsleyjs/i18n/messages.nl.js') }}"></script>
+    <script src="{{ asset('assets/dist/js/init.js') }}"></script>
 {% endblock %}
 
 {% block header %}
     <div class="site--retain">
         <header>
-            <nav class="nav--primary">
+            <nav>
                 {{ knp_menu_render('MBSiteBundle:MenuBuilder:mainMenu') }}
             </nav>
         </header>
