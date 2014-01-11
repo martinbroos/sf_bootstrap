@@ -1,0 +1,24 @@
+{
+  "name": "sf_bootstrap",
+  "version": "0.1.0",
+  "description": "Bootstrap for Symfony projects",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-uglify": "~0.2.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/martinbroos/sf_bootstrap.git"
+  },
+  "author": "Martin Broos",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/martinbroos/sf_bootstrap/issues"
+  }
+}

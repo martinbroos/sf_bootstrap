@@ -14,3 +14,5 @@
 /web/uploads
 /web/bundles
 .DS_Store
+.idea/
+.sass-cache/
