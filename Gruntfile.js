@@ -83,6 +83,10 @@ module.exports = function(grunt) {
 
             composer: {
                 cmd: 'composer install'
+            },
+
+            cache: {
+                cmd: 'app/console cache:clear --env=prod'
             }
         }
     });
@@ -95,6 +99,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'exec:composer',
+        'exec:cache',
         'exec:bower',
         'jshint',
         'uglify:dist',
