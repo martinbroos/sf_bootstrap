@@ -12,14 +12,7 @@ module.exports = function(grunt) {
                     force: true
                 }
             },
-            watch: {
-                options: {
-                    config: 'compass.rb',
-                    outputStyle: 'expanded',
-                    watch: true
-                }
-            },
-            deploy: {
+            dist: {
                 options: {
                     config: 'compass.rb',
                     environment: 'production',
@@ -28,22 +21,91 @@ module.exports = function(grunt) {
                 }
             }
         },
+        // Concat & minify
         uglify: {
-            my_target: {
-                files: [{
-                    expand: true,
-                    cwd: 'web/assets/src/js',
-                    src: '**/*.js',
-                    dest: 'web/assets/dist/js'
-                }]
+            dev: {
+                options: {
+                    mangle: false,
+                    compress: false,
+                    preserveComments: 'all',
+                    beautify: true
+                },
+                files: {
+//                    'web/assets/dist/js/vendor.js': [
+//                        'web/assets/vendor/**/*.js',
+//                    ],
+                    'web/assets/dist/js/script.js': [
+                        'web/assets/src/js/*.js',
+                        '!web/assets/src/js/*.min.js'
+                    ]
+                }
+            },
+            dist: {
+                options: {
+                    mangle: true,
+                    compress: true
+                },
+                files: {
+//                    'web/assets/dist/js/vendor.js': [
+//                        'web/assets/vendor/**/*.js',
+//                    ],
+                    'web/assets/dist/js/script.js': [
+                        'web/assets/src/js/*.js',
+                        '!web/assets/src/js/*.min.js'
+                    ]
+                }
+            }
+        },
+        jshint: {
+            all: [
+                'web/assets/src/js/*.js',
+                '!web/assets/src/js/*.min.js',
+                'Gruntfile.js'
+            ]
+        },
+
+        // Watch for changes and trigger compass, jshint, uglify
+        watch: {
+            compass: {
+                files: ['web/assets/src/sass/{,**/}*.scss'],
+                tasks: ['compass:dev']
+            },
+            js: {
+                files: '<%= jshint.all %>',
+                tasks: ['jshint', 'uglify:dev']
+            }
+        },
+
+        exec: {
+            bower: {
+                cmd: 'bower install'
+            },
+
+            composer: {
+                cmd: 'composer install'
             }
         }
     });
 
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-exec');
 
-    grunt.registerTask('default', ['compass:dev']);
-    grunt.registerTask('watch', ['compass:watch']);
-    grunt.registerTask('deploy', ['compass:deploy']);
+    grunt.registerTask('build', [
+        'exec:composer',
+        'exec:bower',
+        'jshint',
+        'uglify:dist',
+        'compass:dist'
+    ]);
+
+    grunt.registerTask('default', [
+        'exec:composer',
+        'exec:bower',
+        'jshint',
+        'uglify:dev',
+        'compass:dev'
+    ]);
 };

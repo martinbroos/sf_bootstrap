@@ -3,13 +3,13 @@
 {% block content %}
 	<div class="site--retain">
 		<h1>Test Formulier</h1>
-		<form class="form" data-validate="parsley">
+		<form class="form" parsley-validate novalidate>
 			<div class="form__field-wrapper">
 				<div class="form__label-wrapper">
 					<label>Naam</label>
 				</div>
 				<div class="form__input-wrapper">
-					<input type="text" data-required="true" />
+					<input type="text" required />
 				</div>
 			</div>
 			<div class="form__field-wrapper">
@@ -17,9 +17,17 @@
 					<label>Email</label>
 				</div>
 				<div class="form__input-wrapper">
-					<input type="email" data-trigger="change" data-required="true" data-type="email" />
+					<input type="email" parsley-trigger="change" required />
 				</div>
 			</div>
+            <div class="form__field-wrapper">
+                <div class="form__label-wrapper">
+                    <label>Message</label>
+                </div>
+                <div class="form__input-wrapper">
+                    <textarea parsley-trigger="keyup" parsley-rangelength="[20,200]"></textarea>
+                </div>
+            </div>
 			<div class="form__button-wrapper">
 				<button type="submit" class="button">Verzend</button>
 			</div>			
